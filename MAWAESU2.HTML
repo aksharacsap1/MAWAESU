@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Archetype Quiz + Colour Analysis + Room Analysis</title>
 <link rel="manifest" href="manifest.json">
+<script src="service-worker.js"></script>
 
 
 <style>
@@ -1699,6 +1700,13 @@ document.addEventListener('DOMContentLoaded', function() {
     showRoomAnalysis();
   }
 });
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js")
+      .then(() => console.log("Service Worker Registered ✔"))
+      .catch(err => console.log("Service Worker Error:", err));
+  }
+</script>
 
 
 </script>
